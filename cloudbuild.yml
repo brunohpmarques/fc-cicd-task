@@ -18,6 +18,10 @@ steps:
 
 - id: 'Rodando key:generate'
   name: 'gcr.io/cloud-builders/docker'
+  args: ['exec', '-t', 'laravel', 'php', '/var/www/artisan', 'config:cache']
+
+- id: 'Rodando key:generate'
+  name: 'gcr.io/cloud-builders/docker'
   args: ['exec', '-t', 'laravel', 'php', '/var/www/artisan', 'key:generate']
 
 - id: 'Rodando migrations'
