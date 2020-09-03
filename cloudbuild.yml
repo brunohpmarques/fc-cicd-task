@@ -16,7 +16,7 @@ steps:
   name: 'gcr.io/cloud-builders/docker'
   args: ['exec', '-t', 'laravel', 'cp', '.env.example', '.env']
 
-- id: 'Rodando key:generate'
+- id: 'Rodando config:cache'
   name: 'gcr.io/cloud-builders/docker'
   args: ['exec', '-t', 'laravel', 'php', '/var/www/artisan', 'config:cache']
 
